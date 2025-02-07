@@ -1,12 +1,13 @@
-import * as React from 'react'
-import cs from 'classnames'
+import type * as types from 'notion-types'
 import { IoMoonSharp } from '@react-icons/all-files/io5/IoMoonSharp'
 import { IoSunnyOutline } from '@react-icons/all-files/io5/IoSunnyOutline'
+import cs from 'classnames'
+import * as React from 'react'
 import { Breadcrumbs, Search, useNotionContext } from 'react-notion-x'
-import type * as types from 'notion-types'
+
+import { useDarkMode } from '@/lib/use-dark-mode'
 
 import styles from './styles.module.css'
-import { useDarkMode } from '@/lib/use-dark-mode'
 
 const navigationLinks = [
   {
