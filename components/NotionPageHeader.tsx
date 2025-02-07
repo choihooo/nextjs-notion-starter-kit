@@ -3,7 +3,7 @@ import { IoMoonSharp } from '@react-icons/all-files/io5/IoMoonSharp'
 import { IoSunnyOutline } from '@react-icons/all-files/io5/IoSunnyOutline'
 import cs from 'classnames'
 import * as React from 'react'
-import { Breadcrumbs, Header, Search, useNotionContext } from 'react-notion-x'
+import { Breadcrumbs, Search, useNotionContext } from 'react-notion-x'
 
 import { useDarkMode } from '@/lib/use-dark-mode'
 import styles from './styles.module.css'
@@ -19,8 +19,7 @@ const navigationLinks = [
   }
 ]
 
-const isSearchEnabled = true // 예시 값, 실제 설정에 맞게 조정 필요
-const navigationStyle = 'custom' // 예시 값, 실제 설정에 맞게 조정 필요
+const isSearchEnabled = true
 
 function ToggleThemeButton() {
   const [hasMounted, setHasMounted] = React.useState(false)
