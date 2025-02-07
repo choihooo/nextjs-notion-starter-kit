@@ -1,13 +1,12 @@
-import type * as types from 'notion-types'
+import * as React from 'react'
+import cs from 'classnames'
 import { IoMoonSharp } from '@react-icons/all-files/io5/IoMoonSharp'
 import { IoSunnyOutline } from '@react-icons/all-files/io5/IoSunnyOutline'
-import cs from 'classnames'
-import * as React from 'react'
 import { Breadcrumbs, Search, useNotionContext } from 'react-notion-x'
-
-import { useDarkMode } from '@/lib/use-dark-mode'
+import type * as types from 'notion-types'
 
 import styles from './styles.module.css'
+import { useDarkMode } from '@/lib/use-dark-mode'
 
 const navigationLinks = [
   {
@@ -66,7 +65,7 @@ export function NotionPageHeader({
               if (link.pageId) {
                 return (
                   <components.PageLink
-                    href={mapPageUrl(link.pageId)}
+                    href={link.pageId}
                     key={index}
                     className={cs(styles.navLink, 'breadcrumb', 'button')}
                   >
