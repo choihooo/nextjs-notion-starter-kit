@@ -10,8 +10,8 @@ export default siteConfig({
 
   // basic site info (required)
   name: 'Howu',
-  domain: 'nextjs-notion-starter-kit.transitivebullsh.it',
-  author: 'Travis Fischer',
+  domain: 'blog.howu.run',
+  author: 'ChoiHo',
 
   // open graph metadata (optional)
   description: 'Howu 개발 블로그',
