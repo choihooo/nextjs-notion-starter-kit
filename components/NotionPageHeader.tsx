@@ -5,10 +5,22 @@ import cs from 'classnames'
 import * as React from 'react'
 import { Breadcrumbs, Header, Search, useNotionContext } from 'react-notion-x'
 
-import { isSearchEnabled, navigationLinks, navigationStyle } from '@/lib/config'
 import { useDarkMode } from '@/lib/use-dark-mode'
-
 import styles from './styles.module.css'
+
+const navigationLinks = [
+  {
+    title: 'About',
+    pageId: 'About-193ed6b7c1e98075a60fda64a939f0ff'
+  },
+  {
+    title: 'Contact',
+    pageId: 'Contact-193ed6b7c1e980c8b3fcce904283a0b8'
+  }
+]
+
+const isSearchEnabled = true // 예시 값, 실제 설정에 맞게 조정 필요
+const navigationStyle = 'custom' // 예시 값, 실제 설정에 맞게 조정 필요
 
 function ToggleThemeButton() {
   const [hasMounted, setHasMounted] = React.useState(false)
@@ -39,9 +51,6 @@ export function NotionPageHeader({
 }) {
   const { components, mapPageUrl } = useNotionContext()
 
-  if (navigationStyle === 'default') {
-    return <Header block={block} />
-  }
 
   return (
     <header className='notion-header'>
@@ -50,8 +59,8 @@ export function NotionPageHeader({
 
         <div className='notion-nav-header-rhs breadcrumbs'>
           {navigationLinks
-            ?.map((link, index) => {
-              if (!link.pageId && !link.url) {
+            .map((link, index) => {
+              if (!link.pageId) {
                 return null
               }
 
@@ -64,16 +73,6 @@ export function NotionPageHeader({
                   >
                     {link.title}
                   </components.PageLink>
-                )
-              } else {
-                return (
-                  <components.Link
-                    href={link.url}
-                    key={index}
-                    className={cs(styles.navLink, 'breadcrumb', 'button')}
-                  >
-                    {link.title}
-                  </components.Link>
                 )
               }
             })
