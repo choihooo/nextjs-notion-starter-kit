@@ -48,7 +48,7 @@ export function NotionPageHeader({
 }: {
   block: types.CollectionViewPageBlock | types.PageBlock
 }) {
-  const { components, mapPageUrl } = useNotionContext()
+  const { components } = useNotionContext()
 
   return (
     <header className='notion-header'>
